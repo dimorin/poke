@@ -1,3 +1,13 @@
+# ENGLISH POKEMON
+![screenshot](screenshot.png)
+<br>
+[site](https://6210b5b830c0b58e65f5cbfd--dimorin-english-pokemon.netlify.app/)
+<br>
+[how to deploy](https://create-react-app.dev/docs/deployment#netlify)
+
+## API
+PokeApi [https://pokeapi.co/](https://pokeapi.co/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,5 +79,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-## API
-PokeApi [https://pokeapi.co/](https://pokeapi.co/)
