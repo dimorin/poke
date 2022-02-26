@@ -1,7 +1,10 @@
 # POKEMON - 추천, 검색, 관심리스트
 ![screenshot1](screenshot1.png)
+<br>
 ![screenshot2](screenshot2.png)
+<br>
 ![screenshot3](screenshot3.png)
+<br>
 ![screenshot4](screenshot4.png)
 <br>
 [site 보러가기](https://dimorin-english-pokemon.netlify.app)
