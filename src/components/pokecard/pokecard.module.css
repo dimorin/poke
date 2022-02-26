@@ -1,0 +1,20 @@
+@value grass, fire, flying, dragon, water, bug, normal, dark, poison, electric, psychic, ground, ice, steel, fairy, fighting, rock, ghost from '../../common/colors.css';
+
+.type_grass{background-color:grass !important; color:white !important;}
+.type_fire{background-color:fire !important; color:white !important;}
+.type_flying{background-color:flying !important; color:white !important;}
+.type_dragon{background-color:dragon !important; color:white !important;}
+.type_water{background-color:water !important; color:white !important;}
+.type_bug{background-color:bug !important; color:white !important;}
+.type_normal{background-color:normal !important; color:white !important;}
+.type_dark{background-color:dark !important; color:white !important;}
+.type_poison{background-color:poison !important; color:white !important;}
+.type_electric{background-color:electric !important; color:white !important;}
+.type_psychic{background-color:psychic !important; color:white !important;}
+.type_ground{background-color:ground !important; color:white !important;}
+.type_ice{background-color:ice !important; color:white !important;}
+.type_steel{background-color:steel !important; color:white !important;}
+.type_fairy{background-color:fairy !important; color:white !important;}
+.type_fighting{background-color:fighting !important; color:white !important;}
+.type_rock{background-color:rock !important; color:white !important;}
+.type_ghost{background-color:ghost !important; color:white !important;}

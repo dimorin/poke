@@ -19,6 +19,14 @@ npm install react-router-dom
 ## API
 PokeApi [https://pokeapi.co/](https://pokeapi.co/)
 
+## 개선점
+### 전역 상태 관리
+관심포켓몬 데이터를 전역에서 관리해야 함 (Redux or Context API)<br>
+[참고](https://velog.io/@zzangzzong/React-%EC%A0%84%EC%97%AD-%EC%83%81%ED%83%9C-%EA%B4%80%EB%A6%AC)
+### controlled or uncontrolled component
+관심포켓몬 체크버튼을 controlled or uncontrolled 로 구현해야 한다. (리액트 내부 상태 관리 설계 원칙에 의해)<br>
+[참고](https://soldonii.tistory.com/145)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
