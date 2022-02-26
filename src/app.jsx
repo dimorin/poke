@@ -1,54 +1,36 @@
-import { useCallback, useEffect, useState } from 'react';
-import './app.css';
-import SearchHeader from './components/searchheader/searchheader';
-import PokeCard from './components/pokecard/pokecard';
-import PokeList from './components/pokelist/pokelist';
-import Box from '@mui/material/Box';
+import React, { useCallback, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Home from './components/home/home';
+import Interest from './components/interest/interest';
+import Login from './components/login/login';
+import Searched from './components/searched/searched';
 
-function App({poke}) {
-  const [selectedPoke, setSelectedPoke] = useState(null);
-  const [pokecards,setPokeCards] = useState([]);
-  const onSearchPoke = useCallback((query) => {
-    poke.getPoke(query).then((result) => {
-      setSelectedPoke(result);
-    });
-  }, [poke]);
-  const onInputQueryChange = () => {
-    setSelectedPoke(null);
+const App = ({poke, authService, loveRepository}) => {
+  const [loves,setLoves] = useState({}); // <-- 이 데이터들을 전역에서 관리할 수 있는 방법 찾아보기(redux)
+  const [userUid, setUserUid] = useState(null);
+  const onSetUserUid = (id) => {
+    setUserUid(id);
   }
- 
-  useEffect( () => {
-    function shuffleNumber(total,pick){ // total갯수 중 pick 개
-      const numbers = Array(total).fill(0).map((item,index) => index+1);
-      numbers.sort(()=> Math.random() - 0.5);
-      return numbers.slice(0,pick);
-    }
-    
-    async function fetchData (){
-      console.log(shuffleNumber(898,5));
-      Promise.all(
-        shuffleNumber(898,5).map((item) => {
-          return poke.getPoke(item)
-        })
-      ).then((result) => {
-        setPokeCards(result);
-      })
-    };
-    fetchData();
-  }, [poke]);
+  const onGetLoves = useCallback((loves, userUid) => {
+    setLoves(loves);
+    setUserUid(userUid);
+  }, []);
+  const onLoveChange = (id, state) => {
+    setLoves(pre => {
+      const updated = {...pre, [id]:state};
+      loveRepository.saveLoves(userUid, updated);
+      return updated;
+    });
+  }
+  
   return (
-    <Box sx={{display:'flex', alignItems:'center', justifyContent:'center', minHeight:'100%'}} >
-    
-      <Box>
-      <SearchHeader onSearchPoke={onSearchPoke} onInputQueryChange={onInputQueryChange} />
-      {selectedPoke && <PokeCard poke={selectedPoke} />}  
-      
-      {!selectedPoke &&<PokeList pokecards={pokecards} />    }
-      </Box>
-        
-    </Box>
-    
-  );
-}
+    <Routes>
+      <Route path="/" element={<Login authService={authService} onSetUserUid={onSetUserUid} />}></Route>
+      <Route path="/home" element={<Home poke={poke} authService={authService} loveRepository={loveRepository} loves={loves} onLoveChange={onLoveChange} onGetLoves={onGetLoves} userUid={userUid} />} />      
+      <Route path="/interest" element={<Interest poke={poke} authService={authService} loves={loves} onLoveChange={onLoveChange} />}></Route>
+      <Route path="/searched" element={<Searched poke={poke} authService={authService} loves={loves} onLoveChange={onLoveChange} />} />
+    </Routes>    
+  )
+};
 
 export default App;

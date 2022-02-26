@@ -1,0 +1,9 @@
+ul, li{list-style:none;margin:0;padding:0;}
+.menu_list{display:flex;align-items:center;}
+.menu_list > li + li{margin-left:1rem;}
+
+header{display:flex;align-items:center;justify-content:space-between;}
+
+@media screen and (max-width:600px){
+    header{flex-direction:column;justify-content:center;}
+}

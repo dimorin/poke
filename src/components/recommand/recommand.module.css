@@ -1,0 +1,5 @@
+.loadingBox{display:inline-block;width:30px;height:30px;border:2px solid #dddddd;border-top:4px solid #aaaaaa;border-radius:50%;animation:loading 0.5s linear infinite;transform-origin:center center;box-sizing:border-box;}
+@keyframes loading{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}

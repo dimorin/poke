@@ -1,11 +1,14 @@
 import React from 'react';
 import PokeCard from '../pokecard/pokecard';
 import Box from '@mui/material/Box';
-const PokeList = ({pokecards}) => {
+const PokeList = ({pokeCards, onLoveChange, loves}) => {
     return (
-        <Box sx={{display:'flex', flexWrap:'wrap', alignItems:'center', justifyContent:'center', ml:-1, mr:-1, mt:1, mb:1}}>
-            {pokecards.map(pokecard => <PokeCard key={pokecard.id} poke={pokecard} />)}            
-        </Box>
+        <>
+            <Box sx={{display:'flex', flexWrap:'wrap', alignItems:'center', justifyContent:'center', m:1}}>
+                {pokeCards.map(pokeCard => <PokeCard key={pokeCard.id} pokeCard={pokeCard} onLoveChange={onLoveChange} loveState={loves[pokeCard.id] || null} />)}            
+            </Box>
+        </>
+        
     )
 };
 

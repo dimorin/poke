@@ -1,9 +1,17 @@
-# ENGLISH POKEMON
-![screenshot](screenshot.png)
+# POKEMON - 추천, 검색, 관심리스트
+![screenshot1](screenshot1.png)
+![screenshot2](screenshot2.png)
+![screenshot3](screenshot3.png)
+![screenshot4](screenshot4.png)
 <br>
-[site](https://6210b5b830c0b58e65f5cbfd--dimorin-english-pokemon.netlify.app/)
+[site 보러가기](https://dimorin-english-pokemon.netlify.app)
 <br>
 [how to deploy](https://create-react-app.dev/docs/deployment#netlify)
+
+```bash
+npm install firebase
+npm install react-router-dom
+```
 
 ## API
 PokeApi [https://pokeapi.co/](https://pokeapi.co/)
